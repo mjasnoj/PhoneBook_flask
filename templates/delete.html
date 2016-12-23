@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block content %}
+<p>Deleting {{name}}. Are you sure?</p>
+<form method="post">
+    <input type="hidden" value="{{name}}" name="name">
+    <input type="submit" value="Yes" name="yes">
+    <input type="submit" value="No" name="no">
+</form>
+{% endblock %}
+{% block footer %}
+
+{% endblock %}

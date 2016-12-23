@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PhoneBook</title>
+</head>
+<body>
+    <h1>Hello!</h1>
+    {% block content %}
+    <p style="color:red">{{message}}</p>
+    <p><a href="/add">Add</a> </p>
+    <form action="/alter" method="POST">
+            {% for name, phone in contacts %}
+            <li><input type="radio" name="id" value="{{name}}" {% if loop.index == 1 %}checked{% endif %}>
+                {{name}} - {{phone}}
+                </input>
+            </li>
+            {% endfor %}
+        </ul>
+        <input type="submit" value="Delete" name="del">
+        <input type="submit" value="Update" name="upd">
+    </form>
+    {% endblock %}
+    {% block footer %}
+    <p>&copy 2016</p>
+    {% endblock %}
+</body>
+</html>
